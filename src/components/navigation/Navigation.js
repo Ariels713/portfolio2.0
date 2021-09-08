@@ -9,9 +9,15 @@ const NavWrapper = styled.div`
   @media (min-width: 550px) {
     /* Tablets */
     flex-direction: row;
+    justify-content: space-around;
   }
   @media (min-width: 1100px) {
     /* Laptop */
+    margin: auto;
+    /* border: solid red; */
+    max-width: 1400px;
+    align-items: cener;
+    justify-content: space-around;
   }
   @media (min-width: 1500px) {
     /* Desktop */
@@ -36,6 +42,7 @@ const NavBox = styled.nav`
   }
   @media (min-width: 1100px) {
     /* Laptop */
+    top: 21px;
   }
   @media (min-width: 1500px) {
     /* Desktop */
@@ -47,6 +54,34 @@ const NavItem = styled.li`
   font-size: 1rem;
   list-style: none;
   color: hsla(213, 28%, 7%, 1);
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`;
+
+const EmailStyles = styled.p`
+  display: none;
+  @media (min-width: 550px) {
+    /* Tablets */
+    display: none;
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+    display: block;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: hsla(213, 28%, 7%, 1);
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
 `;
 
 function Navigation() {
