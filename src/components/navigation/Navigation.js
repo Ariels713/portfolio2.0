@@ -1,5 +1,6 @@
+import { useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
-import Themes from "../themes/Themes";
+
 import Ariel from "./Ariel";
 
 const NavWrapper = styled.div`
@@ -8,16 +9,19 @@ const NavWrapper = styled.div`
   align-items: center;
   @media (min-width: 550px) {
     /* Tablets */
+
     flex-direction: row;
     justify-content: space-around;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
   @media (min-width: 1100px) {
     /* Laptop */
+
     margin: auto;
     /* border: solid red; */
     max-width: 1400px;
-    align-items: cener;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
   @media (min-width: 1500px) {
     /* Desktop */
@@ -34,6 +38,7 @@ const NavBox = styled.nav`
   border-radius: 23px;
   width: 300px;
   height: 40px;
+  isolation: isolate;
 
   @media (min-width: 550px) {
     /* Tablets */
@@ -43,6 +48,7 @@ const NavBox = styled.nav`
   @media (min-width: 1100px) {
     /* Laptop */
     top: 21px;
+    margin-left: auto;
   }
   @media (min-width: 1500px) {
     /* Desktop */
@@ -54,7 +60,7 @@ const NavItem = styled.li`
   font-size: 1rem;
   list-style: none;
   color: hsla(213, 28%, 7%, 1);
-
+  cursor: pointer;
   @media (min-width: 550px) {
     /* Tablets */
   }
@@ -66,22 +72,21 @@ const NavItem = styled.li`
   }
 `;
 
-const EmailStyles = styled.p`
-  display: none;
-  @media (min-width: 550px) {
-    /* Tablets */
-    display: none;
-  }
-  @media (min-width: 1100px) {
-    /* Laptop */
-    display: block;
-    font-family: sans-serif;
-    font-size: 1rem;
-    color: hsla(213, 28%, 7%, 1);
-  }
-  @media (min-width: 1500px) {
-    /* Desktop */
-  }
+const NavHighiligter = styled.div`
+  --background-color: linear-gradient(
+    to bottom right,
+    hsla(347, 93%, 68%, 1),
+    hsla(9, 86%, 75%, 1),
+    hsla(32, 82%, 75%, 1)
+  );
+  position: absolute;
+  background: var(--background-color);
+  height: 32px;
+  width: 60px;
+  top: 4px;
+  left: 7px;
+  z-index: -1;
+  border-radius: 18px;
 `;
 
 function Navigation() {
@@ -89,10 +94,11 @@ function Navigation() {
     <NavWrapper>
       <Ariel />
       <NavBox>
-        <NavItem>About</NavItem>
+        <NavItem style={{ color: "white" }}>About</NavItem>
         <NavItem>Dailys</NavItem>
         <NavItem>Blog</NavItem>
         <NavItem>Contact</NavItem>
+        <NavHighiligter />
       </NavBox>
     </NavWrapper>
   );
