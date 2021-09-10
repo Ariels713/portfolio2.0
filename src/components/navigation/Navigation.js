@@ -1,8 +1,10 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef } from "react";
+import { useMachine } from "@xstate/react";
 import styled from "styled-components";
-
 import Ariel from "./Ariel";
+import { navHoverMachine } from "../../machines/navHoverMachine";
 
+//Nav wrapper both Name SVG and Nav
 const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,6 +30,7 @@ const NavWrapper = styled.div`
   }
 `;
 
+//Navigation Pill Styles
 const NavBox = styled.nav`
   display: flex;
   justify-content: space-around;
@@ -39,6 +42,7 @@ const NavBox = styled.nav`
   width: 300px;
   height: 40px;
   isolation: isolate;
+  overflow: hidden;
 
   @media (min-width: 550px) {
     /* Tablets */
@@ -55,12 +59,15 @@ const NavBox = styled.nav`
   }
 `;
 
-const NavItem = styled.li`
+//Navigation Items, eg About...
+const NavItem = styled.button`
   font-family: sans-serif;
   font-size: 1rem;
   list-style: none;
   color: hsla(213, 28%, 7%, 1);
   cursor: pointer;
+  background-color: transparent;
+  border: none;
   @media (min-width: 550px) {
     /* Tablets */
   }
@@ -72,6 +79,7 @@ const NavItem = styled.li`
   }
 `;
 
+//Nav Background Anmation.
 const NavHighiligter = styled.div`
   --background-color: linear-gradient(
     to bottom right,
@@ -82,23 +90,53 @@ const NavHighiligter = styled.div`
   position: absolute;
   background: var(--background-color);
   height: 32px;
-  width: 60px;
+  width: 65px;
   top: 4px;
-  left: 7px;
+  left: 304px;
+  transition: transform 1s ease-out;
+  transform: ${(props) => `translateX(${props.translate}px)`};
+
   z-index: -1;
   border-radius: 18px;
 `;
 
 function Navigation() {
+  const [current, send] = useMachine(navHoverMachine);
+  const aboutRef = useRef();
+  const dailysRef = useRef();
+  const blogRef = useRef();
+  const contactRef = useRef();
+  console.log(current.value);
   return (
     <NavWrapper>
       <Ariel />
       <NavBox>
-        <NavItem style={{ color: "white" }}>About</NavItem>
-        <NavItem>Dailys</NavItem>
-        <NavItem>Blog</NavItem>
-        <NavItem>Contact</NavItem>
-        <NavHighiligter />
+        {" "}
+        <NavHighiligter translate={current.context.x} />
+        <NavItem
+          ref={aboutRef}
+          onClick={(e) => send(aboutRef.current?.innerText.toUpperCase())}
+        >
+          About
+        </NavItem>
+        <NavItem
+          ref={dailysRef}
+          onClick={(e) => send(dailysRef.current?.innerText.toUpperCase())}
+        >
+          Dailys
+        </NavItem>
+        <NavItem
+          ref={blogRef}
+          onClick={(e) => send(blogRef.current?.innerText.toUpperCase())}
+        >
+          Blog
+        </NavItem>
+        <NavItem
+          ref={contactRef}
+          onClick={(e) => send(contactRef.current?.innerText.toUpperCase())}
+        >
+          Contact
+        </NavItem>
       </NavBox>
     </NavWrapper>
   );
