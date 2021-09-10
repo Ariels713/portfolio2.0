@@ -9,7 +9,8 @@ export const navHoverMachine = createMachine({
   states: {
     idle: {
       after: {
-        250: { target: "about", actions: assign({ x: -300 }) },
+        // Highliter comes slidking in from left to right.  This updates the css after load
+        200: { target: "about", actions: assign({ x: -300 }) },
       },
     },
     about: {

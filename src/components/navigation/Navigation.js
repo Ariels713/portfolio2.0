@@ -68,6 +68,32 @@ const NavItem = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
+
+  &:hover {
+    color: hsla(213, 28%, 7%, 0.5);
+  }
+
+  /* Updatas color of nav text when clicked */
+  &[data-state="about"] {
+    color: white;
+    transition: color 1.5s;
+  }
+  /* Updatas color of nav text when clicked */
+  &[data-state="dailys"] {
+    color: white;
+    transition: color 1.5s;
+  }
+  /* Updatas color of nav text when clicked */
+  &[data-state="blog"] {
+    color: white;
+    transition: color 1.5s;
+  }
+  /* Updatas color of nav text when clicked */
+  &[data-state="contact"] {
+    color: white;
+    transition: color 1.5s;
+  }
+
   @media (min-width: 550px) {
     /* Tablets */
   }
@@ -106,7 +132,7 @@ function Navigation() {
   const dailysRef = useRef();
   const blogRef = useRef();
   const contactRef = useRef();
-  console.log(current.value);
+
   return (
     <NavWrapper>
       <Ariel />
@@ -114,24 +140,28 @@ function Navigation() {
         {" "}
         <NavHighiligter translate={current.context.x} />
         <NavItem
+          data-state={current.matches("about") && "about"}
           ref={aboutRef}
           onClick={(e) => send(aboutRef.current?.innerText.toUpperCase())}
         >
           About
         </NavItem>
         <NavItem
+          data-state={current.matches("dailys") && "dailys"}
           ref={dailysRef}
           onClick={(e) => send(dailysRef.current?.innerText.toUpperCase())}
         >
           Dailys
         </NavItem>
         <NavItem
+          data-state={current.matches("blog") && "blog"}
           ref={blogRef}
           onClick={(e) => send(blogRef.current?.innerText.toUpperCase())}
         >
           Blog
         </NavItem>
         <NavItem
+          data-state={current.matches("contact") && "contact"}
           ref={contactRef}
           onClick={(e) => send(contactRef.current?.innerText.toUpperCase())}
         >
