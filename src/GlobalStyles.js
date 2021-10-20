@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import SilkaFontRegular from "./fonts/Silka-Regular-&-Italic/Silka_Regular &_Italic_Webfont/Silka-Regular-&-Italic-Webfont/silka-regular-webfont.woff2";
 const GlobalStyles = createGlobalStyle`
 /* Box sizing rules */
 *,
@@ -26,6 +27,13 @@ ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
+
+@font-face {
+    font-family: Silka, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(${SilkaFontRegular});
+  }
 
 /* Set core root defaults */
 html:focus-within {
@@ -75,6 +83,8 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+
 
 `;
 export default GlobalStyles;

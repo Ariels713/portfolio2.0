@@ -9,24 +9,14 @@ const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: min(10%, 3rem);
+  padding-right: min(10%, 3rem);
+  justify-content: space-between;
+  margin: auto;
+  width: min(100%, 1400px);
   @media (min-width: 550px) {
     /* Tablets */
-
     flex-direction: row;
-    justify-content: space-around;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-  @media (min-width: 1100px) {
-    /* Laptop */
-
-    margin: auto;
-    /* border: solid red; */
-    max-width: 1400px;
-    justify-content: flex-start;
-  }
-  @media (min-width: 1500px) {
-    /* Desktop */
   }
 `;
 
@@ -75,22 +65,22 @@ const NavItem = styled.button`
 
   /* Updatas color of nav text when clicked */
   &[data-state="about"] {
-    color: white;
+    color: hsla(104, 100%, 100%, 1);
     transition: color 1.5s;
   }
   /* Updatas color of nav text when clicked */
   &[data-state="dailys"] {
-    color: white;
+    color: hsla(104, 100%, 100%, 1);
     transition: color 1.5s;
   }
   /* Updatas color of nav text when clicked */
   &[data-state="blog"] {
-    color: white;
+    color: hsla(104, 100%, 100%, 1);
     transition: color 1.5s;
   }
   /* Updatas color of nav text when clicked */
   &[data-state="contact"] {
-    color: white;
+    color: hsla(104, 100%, 100%, 1);
     transition: color 1.5s;
   }
 
@@ -119,7 +109,7 @@ const NavHighiligter = styled.div`
   width: 65px;
   top: 4px;
   left: 304px;
-  transition: transform 1s ease-out;
+  transition: transform 0.6s ease-in;
   transform: ${(props) => `translateX(${props.translate}px)`};
 
   z-index: -1;

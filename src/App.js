@@ -1,9 +1,11 @@
 import GlobalStyles from "./GlobalStyles";
 import Navigation from "./components/navigation/Navigation";
+import MainContainer from "./components/body/MainContainer";
 function App() {
   return (
     <>
       <Navigation />
+      <MainContainer />
       <GlobalStyles />
     </>
   );
