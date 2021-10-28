@@ -5,10 +5,10 @@ import ArielSVG from "./ArielSVG";
 const AboutMeWrapper = styled.div`
   width: 350px;
   height: 350px;
+  color: hsla(214, 24%, 19%, 1);
   background-color: hsla(104, 100%, 100%, 1);
   border-radius: 32px;
-  margin: 1rem auto 0.25rem auto;
-  /* margin-top: 1rem; */
+  /* margin: 1rem auto 0.25rem auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -22,17 +22,8 @@ const AboutMeWrapper = styled.div`
 
   @media (min-width: 550px) {
     /* Tablets */
-    width: min(500px, 60%);
-    width: 100%;
+    width: min(575px, 90%);
     height: 280px;
-  }
-  @media (min-width: 1100px) {
-    /* Laptop */
-    /* width: 575px;
-    height: 280px; */
-  }
-  @media (min-width: 1500px) {
-    /* Desktop */
   }
 `;
 

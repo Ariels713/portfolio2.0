@@ -9,8 +9,8 @@ const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: min(10%, 3rem);
-  padding-right: min(10%, 3rem);
+  padding-left: min(1%, 3rem);
+  padding-right: min(1%, 3rem);
   justify-content: space-between;
   margin: auto;
   width: min(100%, 1400px);
