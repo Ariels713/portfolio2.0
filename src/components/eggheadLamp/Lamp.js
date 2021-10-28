@@ -6,17 +6,19 @@ import styled from "styled-components";
 
 const LampWrapper = styled.div`
   display: flex;
+  width: 535px;
   flex-direction: column;
   align-items: flex-start;
   height: 300px;
+  border: solid red;
+  background-color: black;
 `;
 
 const LampSVG = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  width: 400px;
-
+  width: 150px;
   &[data-state="lightOn"] {
     filter: ${(props) => props.dropShadow};
   }
@@ -26,8 +28,8 @@ const LightBeam = styled.div`
   &[data-state="lightOn"]:before {
     content: "";
     position: absolute;
-    top: 280px;
-    left: 25%;
+    top: 350px;
+    left: -14%;
     width: 200px;
     height: 50px;
     background: ${(props) => props.beamBrightness};
@@ -92,6 +94,31 @@ const Circles = styled.button`
   }
 `;
 
+const LampLayoutWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  width: 535px;
+  background-color: hsla(214, 24%, 19%, 1);
+  justify-content: space-evenly;
+  border-radius: 32px;
+  border: solid hsla(104, 100%, 100%, 1) 12px;
+`;
+const LampLayoutArea1 = styled.div`
+  grid-area: 1 / 2 / 3 / 3;
+`;
+const LampLayoutArea2 = styled.div`
+  grid-area: 3 / 1 / 5 / 2;
+`;
+const LampLayoutArea3 = styled.div`
+  grid-area: 3 / 3 / 5 / 4;
+`;
+const LampLayoutArea4 = styled.div`
+  grid-area: 6 / 2 / 7 / 3;
+`;
+
 function Lamp() {
   const [current, send] = useMachine(lightMachine, { devTools: true });
   const { rangeValue } = current.context;
@@ -99,95 +126,103 @@ function Lamp() {
 
   return (
     <>
-      <LampWrapper>
-        <LampSVG
-          data-state={current.value.lightSwitch}
-          dropShadow={`drop-shadow(0px 5px 10px hsla(${colorValue}, .${rangeValue}))`}
-        >
-          <LightBeam
-            beamBrightness={`hsla(${colorValue}, .${rangeValue})`}
+      <LampLayoutWrapper>
+        <LampLayoutArea1>
+          <LampSVG
             data-state={current.value.lightSwitch}
+            dropShadow={`drop-shadow(0px 5px 10px hsla(${colorValue}, .${rangeValue}))`}
           >
-            {current.matches({ lightSwitch: "lightOff" }) && <LightSvg />}
-            {current.matches({ lightSwitch: "lightOn" }) && (
-              <LightSvg lightColor={`hsla(${colorValue}, 1.00)`} />
+            <LightBeam
+              beamBrightness={`hsla(${colorValue}, .${rangeValue})`}
+              data-state={current.value.lightSwitch}
+            >
+              {current.matches({ lightSwitch: "lightOff" }) && <LightSvg />}
+              {current.matches({ lightSwitch: "lightOn" }) && (
+                <LightSvg lightColor={`hsla(${colorValue}, 1.00)`} />
+              )}
+            </LightBeam>
+          </LampSVG>
+        </LampLayoutArea1>
+        <LampLayoutArea2>
+          <LightSwitch onClick={() => send({ type: "TOGGLE" })}>
+            {current.matches({ lightSwitch: "lightOff" }) && (
+              <LightSwitchIcon />
             )}
-          </LightBeam>
-        </LampSVG>
-        <LightSwitch onClick={() => send({ type: "TOGGLE" })}>
-          {current.matches({ lightSwitch: "lightOff" }) && <LightSwitchIcon />}
-          {current.matches({ lightSwitch: "lightOn" }) && (
-            <LightSwitchIcon
-              topColor="hsla(140, 56%, 52%, 1.00)"
-              bottomColor="hsla(140, 56%, 32%, 1.00)"
+            {current.matches({ lightSwitch: "lightOn" }) && (
+              <LightSwitchIcon
+                topColor="hsla(140, 56%, 52%, 1.00)"
+                bottomColor="hsla(140, 56%, 32%, 1.00)"
+              />
+            )}
+          </LightSwitch>
+          <div>
+            <Range
+              thumbColor={`hsla(${colorValue}, 1.00)`}
+              type="range"
+              className="brigtness"
+              name="brightness"
+              min="0"
+              max="99"
+              value={rangeValue}
+              onChange={(e) => send("CHANGE", { value: e.target.value })}
             />
-          )}
-        </LightSwitch>
-        <div>
-          <Range
-            thumbColor={`hsla(${colorValue}, 1.00)`}
-            type="range"
-            className="brigtness"
-            name="brightness"
-            min="0"
-            max="99"
-            value={rangeValue}
-            onChange={(e) => send("CHANGE", { value: e.target.value })}
-          />
-          {/* 
+            {/* 
             <label htmlFor="brightness">Brightness{rangeValue}</label> */}
-        </div>
-      </LampWrapper>
-      <ColorCircleWrapper>
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "359, 94%, 62%" })}
-          color="hsla(359, 94%, 62%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "21, 89%, 56%" })}
-          color="hsla(21, 89%, 56%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "33, 94%, 55%" })}
-          color="hsla(33, 94%, 55%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "20, 94%, 63%" })}
-          color="hsla(20, 94%, 63%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "42, 93%, 64%" })}
-          color="hsla(42, 93%, 64%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "94, 38%, 59%" })}
-          color="hsla(94, 38%, 59%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "162, 44%, 46%" })}
-          color="hsla(162, 44%, 46%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "178, 30%, 43%" })}
-          color="hsla(178, 30%, 43%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "208, 25%, 45%" })}
-          color="hsla(208, 25%, 45%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "198, 62%, 39%" })}
-          color="hsla(198, 62%, 39%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "181, 90%, 31%" })}
-          color="hsla(181, 90%, 31%, 1.00)"
-        />
-        <Circles
-          onClick={() => send("CHANGE_LIGHT", { value: "159, 41%, 70%" })}
-          color="hsla(159, 41%, 70%, 1.00)"
-        />
-      </ColorCircleWrapper>
+          </div>
+        </LampLayoutArea2>
+        <LampLayoutArea3>
+          <ColorCircleWrapper>
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "359, 94%, 62%" })}
+              color="hsla(359, 94%, 62%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "21, 89%, 56%" })}
+              color="hsla(21, 89%, 56%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "33, 94%, 55%" })}
+              color="hsla(33, 94%, 55%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "20, 94%, 63%" })}
+              color="hsla(20, 94%, 63%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "42, 93%, 64%" })}
+              color="hsla(42, 93%, 64%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "94, 38%, 59%" })}
+              color="hsla(94, 38%, 59%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "162, 44%, 46%" })}
+              color="hsla(162, 44%, 46%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "178, 30%, 43%" })}
+              color="hsla(178, 30%, 43%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "208, 25%, 45%" })}
+              color="hsla(208, 25%, 45%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "198, 62%, 39%" })}
+              color="hsla(198, 62%, 39%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "181, 90%, 31%" })}
+              color="hsla(181, 90%, 31%, 1.00)"
+            />
+            <Circles
+              onClick={() => send("CHANGE_LIGHT", { value: "159, 41%, 70%" })}
+              color="hsla(159, 41%, 70%, 1.00)"
+            />
+          </ColorCircleWrapper>
+        </LampLayoutArea3>
+      </LampLayoutWrapper>
     </>
   );
 }

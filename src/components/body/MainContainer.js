@@ -19,6 +19,7 @@ const MainWrapper = styled.div`
   margin: 1rem auto;
   padding-top: 1rem;
   justify-items:flex-end;
+  /* justify-content: space-evenly; */
 
   }
   @media (min-width: 1100px) {
@@ -50,6 +51,7 @@ const GridArea4 = styled.div`
 `;
 const GridArea5 = styled.div`
   grid-area: 4 / 1 / 8 / 6;
+  justify-self: flex-start;
   /* cursor: pointer; */
 `;
 
