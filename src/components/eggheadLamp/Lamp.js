@@ -120,9 +120,7 @@ const LampLayoutArea2 = styled.div`
 const LampLayoutArea3 = styled.div`
   grid-area: 3 / 3 / 5 / 4;
 `;
-// const LampLayoutArea4 = styled.div`
-//   grid-area: 6 / 2 / 7 / 3;
-// `;
+// git
 
 function Lamp() {
   const [current, send] = useMachine(lightMachine, { devTools: true });

@@ -24,27 +24,36 @@ const SocialsWrapper = styled.div`
     16px 32px 32px hsla(359, 11%, 92%, 0.2);
 `;
 
-const SocialIconWrapper = styled.div``;
+const SocialIconLinks = styled.a``;
 
 function Socials() {
   return (
     <SocialsWrapper>
       {/* <SocialBackgroundImage src={skyBlue} /> */}
-      <SocialIconWrapper>
+      <SocialIconLinks target="_blank" href="https://github.com/Ariels713">
         <GithubSVG />
-      </SocialIconWrapper>
-      <SocialIconWrapper>
+      </SocialIconLinks>
+      <SocialIconLinks
+        target="_blank"
+        href="https://www.linkedin.com/in/ariels713/"
+      >
         <LinkedInLogo />
-      </SocialIconWrapper>
-      <SocialIconWrapper>
+      </SocialIconLinks>
+      <SocialIconLinks
+        target="_blank"
+        href="https://twitter.com/Ariel_Rodriguez"
+      >
         <LogoTwitter />
-      </SocialIconWrapper>
-      <SocialIconWrapper>
+      </SocialIconLinks>
+      <SocialIconLinks
+        target="_blank"
+        href="https://hashnode.com/@ArielRodriguez"
+      >
         <HashnodeLogo />
-      </SocialIconWrapper>
-      <SocialIconWrapper>
+      </SocialIconLinks>
+      <SocialIconLinks target="_blank" href="https://dailys.vercel.app/">
         <DailysLogo />
-      </SocialIconWrapper>
+      </SocialIconLinks>
     </SocialsWrapper>
   );
 }

@@ -1,0 +1,9 @@
+.video-js {
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 12px solid hsla(104, 100%, 100%, 1);
+}
+
+.video-js .vjs-big-play-button {
+  background-color: hsla(353, 90%, 71%, 0.5);
+}

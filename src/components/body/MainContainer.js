@@ -4,7 +4,7 @@ import Socials from "../socials/Socials";
 import PseudoElement from "../psuedoClasses/PsuedoElement";
 import BlogPost from "../blogs/BlogPost";
 import Lamp from "../eggheadLamp/Lamp";
-
+import IntroVideo from "../videos/IntroVideo";
 // Main Wrapper, Layout for all grid siZes
 const MainWrapper = styled.div`
   --gap: 1rem;
@@ -52,29 +52,39 @@ const GridArea4 = styled.div`
 const GridArea5 = styled.div`
   grid-area: 4 / 1 / 8 / 6;
   justify-self: flex-start;
-  /* cursor: pointer; */
+  cursor: pointer;
+`;
+const GridArea6 = styled.div`
+  grid-area: 4 / 9 / 7 / 13;
+  justify-self: flex-end;
+  cursor: pointer;
 `;
 
 function MainContainer() {
   // Open and close Modal
   return (
-    <MainWrapper>
-      <GridArea1>
-        <AboutMe />
-      </GridArea1>
-      <GridArea2>
-        <Socials />
-      </GridArea2>
-      <GridArea3>
-        <PseudoElement />
-      </GridArea3>
-      <GridArea4>
-        <BlogPost />
-      </GridArea4>
-      <GridArea5>
-        <Lamp />
-      </GridArea5>
-    </MainWrapper>
+    <>
+      <MainWrapper>
+        <GridArea1>
+          <AboutMe />
+        </GridArea1>
+        <GridArea2>
+          <Socials />
+        </GridArea2>
+        <GridArea3>
+          <PseudoElement />
+        </GridArea3>
+        <GridArea4>
+          <BlogPost />
+        </GridArea4>
+        <GridArea5>
+          <Lamp />
+        </GridArea5>
+        <GridArea6>
+          <IntroVideo />
+        </GridArea6>
+      </MainWrapper>
+    </>
   );
 }
 
