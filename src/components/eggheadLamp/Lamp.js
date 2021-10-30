@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useMachine } from "@xstate/react";
-import { lightMachine } from "./lightMachine";
-import LightSvg from "./LightSVG";
-import LightSwitchIcon from "./LightSwitchIcon";
-import styled from "styled-components";
-import "../dialogStyles/dialogStyles.css";
-import { Dialog } from "@reach/dialog";
-import "@reach/dialog/styles.css";
-import CloseSVG from "../dialogStyles/CloseSVG";
+import { useState } from "react"
+import { useMachine } from "@xstate/react"
+import { lightMachine } from "./lightMachine"
+import LightSvg from "./LightSVG"
+import LightSwitchIcon from "./LightSwitchIcon"
+import styled from "styled-components"
+import "../dialogStyles/dialogStyles.css"
+import { Dialog } from "@reach/dialog"
+import "@reach/dialog/styles.css"
+import CloseSVG from "../dialogStyles/CloseSVG"
 
 // const LampWrapper = styled.div`
 //   display: flex;
@@ -27,7 +27,7 @@ const LampSVG = styled.div`
   &[data-state="lightOn"] {
     filter: ${(props) => props.dropShadow};
   }
-`;
+`
 
 const LightBeam = styled.div`
   &[data-state="lightOn"]:before {
@@ -41,11 +41,11 @@ const LightBeam = styled.div`
     transform: perspective(200px) rotateX(0deg) scale(1.2, 0.5);
     filter: blur(28px);
   }
-`;
+`
 
 const LightSwitch = styled.div`
   cursor: pointer;
-`;
+`
 
 const Range = styled.input`
   width: 100%;
@@ -73,7 +73,7 @@ const Range = styled.input`
     cursor: pointer;
     -webkit-appearance: none;
   }
-`;
+`
 
 const ColorCircleWrapper = styled.div`
   display: grid;
@@ -82,7 +82,7 @@ const ColorCircleWrapper = styled.div`
   gap: 10px 10px;
   margin-left: -42px;
   margin-top: 16px;
-`;
+`
 
 const Circles = styled.button`
   width: 25px;
@@ -97,7 +97,7 @@ const Circles = styled.button`
     transform: scale(1.2)
   }
   }
-`;
+`
 
 const LampLayoutWrapper = styled.div`
   display: grid;
@@ -110,25 +110,25 @@ const LampLayoutWrapper = styled.div`
   justify-content: space-evenly;
   border-radius: 32px;
   border: solid hsla(104, 100%, 100%, 1) 12px;
-`;
+`
 const LampLayoutArea1 = styled.div`
   grid-area: 1 / 2 / 3 / 3;
-`;
+`
 const LampLayoutArea2 = styled.div`
   grid-area: 3 / 1 / 5 / 2;
-`;
+`
 const LampLayoutArea3 = styled.div`
   grid-area: 3 / 3 / 5 / 4;
-`;
+`
 // git
 
 function Lamp() {
-  const [current, send] = useMachine(lightMachine, { devTools: true });
-  const { rangeValue } = current.context;
-  const { colorValue } = current.context;
-  const [showDialog, setShowDialog] = useState(false);
-  const open = () => setShowDialog(true);
-  const close = () => setShowDialog(false);
+  const [current, send] = useMachine(lightMachine, { devTools: true })
+  const { rangeValue } = current.context
+  const { colorValue } = current.context
+  const [showDialog, setShowDialog] = useState(false)
+  const open = () => setShowDialog(true)
+  const close = () => setShowDialog(false)
 
   return (
     <>
@@ -376,7 +376,7 @@ function Lamp() {
         </Dialog>
       )}
     </>
-  );
+  )
 }
 
-export default Lamp;
+export default Lamp

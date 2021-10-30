@@ -6,6 +6,8 @@ import BlogPost from "../blogs/BlogPost"
 import Lamp from "../eggheadLamp/Lamp"
 import IntroVideo from "../videos/IntroVideo"
 import ProjectStack from "../projects/ProjectStack"
+import RecentProjects from "../projects/RecentProjects"
+import Contact from "../contact/Contact"
 // Main Wrapper, Layout for all grid siZes
 const MainWrapper = styled.div`
   --gap: 1rem;
@@ -62,9 +64,16 @@ const GridArea6 = styled.div`
 `
 const GridArea7 = styled.div`
   grid-area: 5 / 9 / 5 / 9;
-
   justify-self: center;
   cursor: pointer;
+`
+const GridArea8 = styled.div`
+  grid-area: 6 / 6 / 7 / 9;
+  justify-self: center;
+  cursor: pointer;
+`
+const GridArea9 = styled.div`
+  grid-area: 6 / 1 / 9 / 6;
 `
 
 function MainContainer() {
@@ -93,6 +102,12 @@ function MainContainer() {
         <GridArea7>
           <ProjectStack />
         </GridArea7>
+        <GridArea8>
+          <RecentProjects />
+        </GridArea8>
+        <GridArea9>
+          <Contact />
+        </GridArea9>
       </MainWrapper>
     </>
   )
