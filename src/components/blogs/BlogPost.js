@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const BlogPostWrapper = styled.div`
   max-width: 400px;
@@ -7,24 +7,24 @@ const BlogPostWrapper = styled.div`
   padding: clamp(2rem, 3%, 2rem);
   font-family: Silka;
   color: hsla(214, 24%, 19%, 1);
-`;
+`
 
 const BlogPostTitle = styled.h1`
   font-size: 1.25rem;
-`;
+`
 
 const BlogPostContent = styled.p`
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   color: hsla(214, 24%, 19%, 0.7);
-`;
+`
 
 const BlogPostLink = styled.a`
   display: block;
   text-align: right;
   color: hsla(220, 3%, 63%, 1);
-`;
+`
 
 function BlogPost() {
   return (
@@ -39,7 +39,7 @@ function BlogPost() {
       </BlogPostLink>
       {/* <BlogPostButton role="button">Hashnode</BlogPostButton> */}
     </BlogPostWrapper>
-  );
+  )
 }
 
-export default BlogPost;
+export default BlogPost

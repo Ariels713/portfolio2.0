@@ -1,10 +1,11 @@
-import styled from "styled-components";
-import AboutMe from "../aboutMe/AboutMe";
-import Socials from "../socials/Socials";
-import PseudoElement from "../psuedoClasses/PsuedoElement";
-import BlogPost from "../blogs/BlogPost";
-import Lamp from "../eggheadLamp/Lamp";
-import IntroVideo from "../videos/IntroVideo";
+import styled from "styled-components"
+import AboutMe from "../aboutMe/AboutMe"
+import Socials from "../socials/Socials"
+import PseudoElement from "../psuedoClasses/PsuedoElement"
+import BlogPost from "../blogs/BlogPost"
+import Lamp from "../eggheadLamp/Lamp"
+import IntroVideo from "../videos/IntroVideo"
+import ProjectStack from "../projects/ProjectStack"
 // Main Wrapper, Layout for all grid siZes
 const MainWrapper = styled.div`
   --gap: 1rem;
@@ -28,37 +29,43 @@ const MainWrapper = styled.div`
   @media (min-width: 1500px) {
     /* Desktop */
   }
-`;
+`
 
 // Grid Areas for Layout, Each compontent is in it's own layout
 const GridArea1 = styled.div`
-  /* grid-area: 1 / 1 / 4 / 5; */
   grid-area: 1 / 2 / 4 / 6;
-`;
+  margin-bottom: 1rem;
+`
 const GridArea2 = styled.div`
-  /* grid-area: 1 / 5 / 4 / 6; */
-  grid-area: 1 / 1 / 4 / 2;
+  grid-area: 1 / 1 / 3 / 2;
   justify-self: flex-start;›
   /* cursor: pointer; */
-`;
+`
 const GridArea3 = styled.div`
   grid-area: 1 / 6 / 7 / 9;
   cursor: pointer;
-`;
+`
 const GridArea4 = styled.div`
-  grid-area: 1 / 9 / 5 / 13;
+  grid-area: 1 / 9 / 3 / 13;
   /* cursor: pointer; */
-`;
+`
 const GridArea5 = styled.div`
-  grid-area: 4 / 1 / 8 / 6;
+  grid-area: 3 / 1 / 8 / 6;
   justify-self: flex-start;
   cursor: pointer;
-`;
+  margin-top: 1rem;
+`
 const GridArea6 = styled.div`
-  grid-area: 4 / 9 / 7 / 13;
+  grid-area: 3 / 9 / 5 / 13;
   justify-self: flex-end;
   cursor: pointer;
-`;
+`
+const GridArea7 = styled.div`
+  grid-area: 5 / 9 / 5 / 9;
+
+  justify-self: center;
+  cursor: pointer;
+`
 
 function MainContainer() {
   // Open and close Modal
@@ -83,9 +90,12 @@ function MainContainer() {
         <GridArea6>
           <IntroVideo />
         </GridArea6>
+        <GridArea7>
+          <ProjectStack />
+        </GridArea7>
       </MainWrapper>
     </>
-  );
+  )
 }
 
-export default MainContainer;
+export default MainContainer
