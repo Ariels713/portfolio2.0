@@ -4,7 +4,7 @@ const BlogPostWrapper = styled.div`
   max-width: 400px;
   background-color: hsla(104, 100%, 100%, 1);
   border-radius: 32px;
-  padding: clamp(2rem, 3%, 2rem);
+  padding: clamp(0.75rem, 3%, 2rem);
   font-family: Silka;
   color: hsla(214, 24%, 19%, 1);
 `
