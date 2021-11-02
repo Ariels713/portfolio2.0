@@ -8,16 +8,19 @@ import IntroVideo from "../videos/IntroVideo"
 import ProjectStack from "../projects/ProjectStack"
 import RecentProjects from "../projects/RecentProjects"
 import Contact from "../contact/Contact"
-
+import propsVideo from "../videos/reactProps.mp4"
+import LampVideo from "../videos/LampVideo"
 // Main Wrapper, Layout for all grid siZes
 const MainWrapper = styled.div`
   --gap: 1rem;
   --min: 20ch;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: px;
-  grid-row-gap: 10px;
+  /* grid-template-rows: repeat(8, 1fr); */
+  /* grid-column-gap: px; */
+  grid-row-gap: 1.5rem;
+  padding: clamp(0.75rem, 3%, 2rem);
+  place-items: center;
 
   @media (min-width: 550px) {
     /* Tablets */
@@ -63,6 +66,20 @@ const MainWrapper = styled.div`
 // ;`
 
 // Grid Areas for Layout, Each compontent is in it's own layout
+const GridArea1 = styled.div`
+  /* Socials Component */
+  grid-area: 2 / 1 / 3 / 2;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
 // const GridArea1 = styled.div`
 //   /* Socials Component */
 //   grid-area: 1 / 1 / 4 / 2;
@@ -78,8 +95,24 @@ const MainWrapper = styled.div`
 //     grid-area: 1 / 1 / 4 / 2;
 //   }
 // `
+
+const GridArea2 = styled.div`
+  /* AboutMe Component */
+  margin-top: 1.5rem;
+  grid-area: 1 / 1 / 2 / 2;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
 // const GridArea2 = styled.div`
-//   /* AboutMe Component */
+//
 //   grid-area: 1 / 2 / 4 / 6;
 //   justify-self: center;
 
@@ -94,8 +127,23 @@ const MainWrapper = styled.div`
 //     grid-area: 1 / 2 / 4 / 6;
 //   }
 // `
+
+const GridArea3 = styled.div`
+  /* Video Intro Component */
+  grid-area: 3 / 1 / 4 / 2;
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
+
 // const GridArea3 = styled.div`
-//   /* Video Intro Component */
+//
 //   grid-area: 1 / 6 / 4 / 10;
 //   cursor: pointer;
 //   justify-self: center;
@@ -112,8 +160,22 @@ const MainWrapper = styled.div`
 //     /* Desktop */
 //   }
 // `
+const GridArea4 = styled.div`
+  /* Psuedo Classes Component */
+  grid-area: 4 / 1 / 5 / 2;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
 // const GridArea4 = styled.div`
-//   /* Psuedo Classes Component */
+//
 //   grid-area: 1 / 10 / 7 / 13;
 //   cursor: pointer;
 //   justify-self: end;
@@ -128,8 +190,37 @@ const MainWrapper = styled.div`
 //     justify-self: center;
 //   }
 // `
+const GridGif = styled.div`
+  grid-area: 5 / 1 / 6 / 2;
+  width: 350px;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
+const GridArea5 = styled.div`
+  /* Lamp Component */
+  /* grid-area: 5 / 1 / 6 / 2; */
+  display: none;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
 // const GridArea5 = styled.div`
-//   /* Lamp Component */
+//
 //   grid-area: 4 / 1 / 8 / 6;
 //   justify-self: flex-start;
 //   cursor: pointer;
@@ -228,6 +319,25 @@ function MainContainer() {
   return (
     <>
       <MainWrapper>
+        <GridArea1>
+          <Socials />
+        </GridArea1>
+        <GridArea2>
+          <AboutMe />
+        </GridArea2>
+        <GridArea3>
+          <IntroVideo />
+        </GridArea3>
+        <GridArea4>
+          <PseudoElement />
+        </GridArea4>
+        <GridGif>
+          <LampVideo />
+        </GridGif>
+        <GridArea5>
+          <Lamp />
+        </GridArea5>
+
         {/* <GridArea1>
           <Socials />
         </GridArea1>

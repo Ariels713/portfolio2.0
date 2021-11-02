@@ -100,7 +100,7 @@ const Circles = styled.button`
 `
 
 const LampLayoutWrapper = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(3 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 10px;
@@ -109,16 +109,56 @@ const LampLayoutWrapper = styled.div`
   background-color: hsla(214, 24%, 19%, 1);
   justify-content: space-evenly;
   border-radius: 32px;
-  border: solid hsla(104, 100%, 100%, 1) 12px;
+  border: solid hsla(104, 100%, 100%, 1) 12px; */
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
 `
 const LampLayoutArea1 = styled.div`
   grid-area: 1 / 2 / 3 / 3;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
 `
 const LampLayoutArea2 = styled.div`
   grid-area: 3 / 1 / 5 / 2;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
 `
 const LampLayoutArea3 = styled.div`
   grid-area: 3 / 3 / 5 / 4;
+
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
 `
 // git
 

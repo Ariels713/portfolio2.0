@@ -1,12 +1,25 @@
-import styled from "styled-components";
-import GithubSVG from "./GithubSVG.js";
-import LinkedInLogo from "./LinkedInLogo";
-import LogoTwitter from "../psuedoClasses/Twitter";
-import HashnodeLogo from "./HashnodeLogo";
-import DailysLogo from "./DailysLogo";
+import styled from "styled-components"
+import GithubSVG from "./GithubSVG.js"
+import LinkedInLogo from "./LinkedInLogo"
+import LogoTwitter from "../psuedoClasses/Twitter"
+import HashnodeLogo from "./HashnodeLogo"
+import DailysLogo from "./DailysLogo"
 
 const SocialsWrapper = styled.div`
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  line-height: 0;
+  border-radius: 32px;
+  width: 350px;
+  padding: clamp(0.75rem, 3%, 2rem);
+  background-color: hsla(104, 100%, 100%, 1);
+  box-shadow: 1px 2px 2px hsla(359, 11%, 92%, 0.2),
+    2px 4px 4px hsla(359, 11%, 92%, 0.2), 4px 8px 8px hsla(359, 11%, 92%, 0.2),
+    8px 16px 16px hsla(359, 11%, 92%, 0.2),
+    16px 32px 32px hsla(359, 11%, 92%, 0.2);
+  /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 10px;
@@ -17,14 +30,20 @@ const SocialsWrapper = styled.div`
   align-items: center;
   justify-items: center;
 
-  background-color: hsla(104, 100%, 100%, 1);
-  box-shadow: 1px 2px 2px hsla(359, 11%, 92%, 0.2),
-    2px 4px 4px hsla(359, 11%, 92%, 0.2), 4px 8px 8px hsla(359, 11%, 92%, 0.2),
-    8px 16px 16px hsla(359, 11%, 92%, 0.2),
-    16px 32px 32px hsla(359, 11%, 92%, 0.2);
-`;
+   */
 
-const SocialIconLinks = styled.a``;
+  @media (min-width: 550px) {
+    /* Tablets */
+  }
+  @media (min-width: 1100px) {
+    /* Laptop */
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
+  }
+`
+
+const SocialIconLinks = styled.a``
 
 function Socials() {
   return (
@@ -55,7 +74,7 @@ function Socials() {
         <DailysLogo />
       </SocialIconLinks>
     </SocialsWrapper>
-  );
+  )
 }
 
-export default Socials;
+export default Socials
