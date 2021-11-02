@@ -99,10 +99,11 @@ const GridArea4 = styled.div`
   }
 `
 const GridArea5 = styled.div`
-  grid-area: 3 / 1 / 8 / 6;
+  /* grid-area: 3 / 1 / 8 / 6; */
+  grid-area: 4 / 1 / 8 / 6;
   justify-self: flex-start;
   cursor: pointer;
-  margin-top: 1.5rem;
+  margin-top: -1.5rem;
 
   @media (max-width: 550px) {
     /* Tablets */
@@ -117,8 +118,9 @@ const GridArea5 = styled.div`
   }
 `
 const GridArea6 = styled.div`
-  grid-area: 3 / 9 / 5 / 13;
-  justify-self: flex-end;
+  /* grid-area: 3 / 9 / 5 / 13; */
+  grid-area: 4 / 6 / 7 / 10;
+  justify-self: center;
   cursor: pointer;
 
   @media (max-width: 550px) {
@@ -136,10 +138,11 @@ const GridArea6 = styled.div`
   }
 `
 const GridArea7 = styled.div`
-  grid-area: 5 / 9 / 5 / 9;
+  grid-area: 8 / 6 / 9 / 9;
   justify-self: center;
   cursor: pointer;
-  margin-top: 3rem;
+  /* width: 100%;  */
+  /* margin-top: 3rem; */
   @media (max-width: 550px) {
     /* Tablets */
   }
@@ -152,7 +155,8 @@ const GridArea7 = styled.div`
   }
 `
 const GridArea8 = styled.div`
-  grid-area: 6 / 6 / 7 / 9;
+  /* grid-area: 6 / 6 / 7 / 9; */
+  grid-area: 7 / 6 / 10 / 12;
   justify-self: center;
   cursor: pointer;
 
@@ -168,8 +172,8 @@ const GridArea8 = styled.div`
   }
 `
 const GridArea9 = styled.div`
-  grid-area: 6 / 1 / 9 / 6;
-  margin-top: 2rem;
+  grid-area: 8 / 1 / 10 / 6;
+
   @media (max-width: 550px) {
     /* Tablets */
   }
@@ -199,25 +203,21 @@ function MainContainer() {
         <GridArea4>
           <PseudoElement />
         </GridArea4>
-
-        {/* <GridArea4>
-          <BlogPost />
-        </GridArea4>
         <GridArea5>
           <Lamp />
         </GridArea5>
         <GridArea6>
-          <IntroVideo />
+          <BlogPost />
         </GridArea6>
         <GridArea7>
-          <ProjectStack />
+          <RecentProjects />
         </GridArea7>
         <GridArea8>
-          <RecentProjects />
+          <ProjectStack />
         </GridArea8>
         <GridArea9>
           <Contact />
-        </GridArea9> */}
+        </GridArea9>
       </MainWrapper>
     </>
   )

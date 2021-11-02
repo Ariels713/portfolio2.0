@@ -1,12 +1,23 @@
 import styled from "styled-components"
 
 const BlogPostWrapper = styled.div`
-  max-width: 400px;
+  width: 350px;
   background-color: hsla(104, 100%, 100%, 1);
   border-radius: 32px;
   padding: clamp(0.75rem, 3%, 2rem);
   font-family: Silka;
   color: hsla(214, 24%, 19%, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: clamp(1.5rem, 3%, 2rem);
+  word-break: break-word;
+
+  box-shadow: 1px 2px 2px hsla(359, 11%, 92%, 0.2),
+    2px 4px 4px hsla(359, 11%, 92%, 0.2), 4px 8px 8px hsla(359, 11%, 92%, 0.2),
+    8px 16px 16px hsla(359, 11%, 92%, 0.2),
+    16px 32px 32px hsla(359, 11%, 92%, 0.2);
+  margin: auto;
 `
 
 const BlogPostTitle = styled.h1`
