@@ -14,184 +14,221 @@ const MainWrapper = styled.div`
   --gap: 1rem;
   --min: 20ch;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-column-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: px;
   grid-row-gap: 10px;
-  justify-items: center;
-  max-width: 1300px;
-  margin: 1rem auto;
-  padding-top: 1rem;
-  justify-items: center;
 
-  @media (max-width: 550px) {
+  @media (min-width: 550px) {
     /* Tablets */
   }
-  @media (max-width: 1100px) {
+  @media (min-width: 1100px) {
     /* Laptop */
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    max-width: min(93%, 1100px);
+  }
+  @media (min-width: 1500px) {
+    /* Desktop */
   }
 `
+// const MainWrapper = styled.div`
+
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-template-rows: repeat(12, 1fr);
+//   grid-column-gap: 10px;
+//   grid-row-gap: 10px;
+//   justify-items: center;
+//   max-width: 1300px;
+//   margin: 1rem auto;
+//   padding-top: 1rem;
+//   justify-items: center;
+
+//   @media (max-width: 400px) {
+//     /* Tablets */
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: repeat(8, 1fr);
+//     grid-column-gap: px;
+//     grid-row-gap: 10px;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     display: grid;
+//     grid-template-columns: repeat(10, 1fr);
+//     grid-template-rows: repeat(12, 1fr);
+//     grid-column-gap: 10px;
+//     grid-row-gap: 10px;
+//     max-width: min(93%, 1100px);
+//   }
+
+// ;`
 
 // Grid Areas for Layout, Each compontent is in it's own layout
-const GridArea1 = styled.div`
-  /* grid-area: 1 / 2 / 4 / 6; */
-  grid-area: 1 / 1 / 4 / 2;
-  margin-bottom: 1rem;
-  justify-self: start;
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    /* grid-area: 1 / 2 / 4 / 4; */
-  }
-`
-const GridArea2 = styled.div`
-  /* grid-area: 1 / 1 / 4 / 2; */
-  grid-area: 1 / 2 / 4 / 6;
-  justify-self: center;
+// const GridArea1 = styled.div`
+//   /* Socials Component */
+//   grid-area: 1 / 1 / 4 / 2;
+//   margin-bottom: 1rem;
+//   justify-self: start;
 
-  /* cursor: pointer; */
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 1 / 1 / 4 / 2;
+//   }
+// `
+// const GridArea2 = styled.div`
+//   /* AboutMe Component */
+//   grid-area: 1 / 2 / 4 / 6;
+//   justify-self: center;
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    /* grid-area: 1 / 1 / 4 / 2; */
-  }
-`
-const GridArea3 = styled.div`
-  /* grid-area: 1 / 6 / 7 / 9; */
-  grid-area: 1 / 6 / 4 / 10;
-  cursor: pointer;
-  justify-self: center;
+//   /* cursor: pointer; */
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    display: none;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
-const GridArea4 = styled.div`
-  /* grid-area: 1 / 9 / 3 / 13; */
-  grid-area: 1 / 10 / 7 / 13;
-  cursor: pointer;
-  justify-self:end;
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    display: none;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
-const GridArea5 = styled.div`
-  /* grid-area: 3 / 1 / 8 / 6; */
-  grid-area: 4 / 1 / 8 / 6;
-  justify-self: flex-start;
-  cursor: pointer;
-  margin-top: -1.5rem;
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     grid-area: 1 / 1 / 2 / 2;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 1 / 2 / 4 / 6;
+//   }
+// `
+// const GridArea3 = styled.div`
+//   /* Video Intro Component */
+//   grid-area: 1 / 6 / 4 / 10;
+//   cursor: pointer;
+//   justify-self: center;
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    grid-area: 1 / 4 / 5 / 7;
-    margin-top: 0;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
-const GridArea6 = styled.div`
-  /* grid-area: 3 / 9 / 5 / 13; */
-  grid-area: 4 / 6 / 7 / 10;
-  justify-self: center;
-  cursor: pointer;
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 1 / 6 / 4 / 11;
+//   }
+//   @media (max-width: 1500px) {
+//     /* Desktop */
+//   }
+// `
+// const GridArea4 = styled.div`
+//   /* Psuedo Classes Component */
+//   grid-area: 1 / 10 / 7 / 13;
+//   cursor: pointer;
+//   justify-self: end;
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    /* display: none; */
-    grid-area: 4 / 1 / 6 / 4;
-    justify-self: center;
-    margin-top: -3rem;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
-const GridArea7 = styled.div`
-  grid-area: 8 / 6 / 9 / 9;
-  justify-self: center;
-  cursor: pointer;
-  /* width: 100%;  */
-  /* margin-top: 3rem; */
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    display: none;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
-const GridArea8 = styled.div`
-  /* grid-area: 6 / 6 / 7 / 9; */
-  grid-area: 7 / 6 / 10 / 12;
-  justify-self: center;
-  cursor: pointer;
+//   @media (max-width: 550px) {
+//     /* tablet */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 4 / 7 / 10 / 11;
+//     justify-self: center;
+//   }
+// `
+// const GridArea5 = styled.div`
+//   /* Lamp Component */
+//   grid-area: 4 / 1 / 8 / 6;
+//   justify-self: flex-start;
+//   cursor: pointer;
+//   margin-top: -1.5rem;
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    display: none;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
-const GridArea9 = styled.div`
-  grid-area: 8 / 1 / 10 / 6;
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 4 / 1 / 8 / 7;
+//     margin-top: 0;
+//   }
+//   @media (max-width: 1500px) {
+//     /* Desktop */
+//   }
+// `
+// const GridArea6 = styled.div`
+//   /* Blog Component */
+//   grid-area: 4 / 6 / 7 / 10;
+//   justify-self: center;
+//   cursor: pointer;
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
-    display: none;
-  }
-  @media (max-width: 1500px) {
-    /* Desktop */
-  }
-`
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+
+//     grid-area: 10 / 6 / 12 / 11;
+//     justify-self: center;
+//     margin-top: -3rem;
+//   }
+//   @media (max-width: 1500px) {
+//     /* Desktop */
+//   }
+// `
+// const GridArea7 = styled.div`
+//   /* Recent Projects Pointer Component */
+//   grid-area: 8 / 6 / 9 / 9;
+//   justify-self: center;
+//   cursor: pointer;
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 8 / 1/ 9 / 7;
+//     align-self: center;
+//   }
+//   @media (max-width: 1500px) {
+//     /* Desktop */
+//   }
+// `
+// const GridArea8 = styled.div`
+//   /* Component Stack */
+//   grid-area: 7 / 6 / 10 / 12;
+//   justify-self: center;
+//   cursor: pointer;
+
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 9 / 1 / 11 / 7;
+//     width: 100%;
+//   }
+//   @media (max-width: 1500px) {
+//     /* Desktop */
+//   }
+// `
+// const GridArea9 = styled.div`
+//   /* Contatct Component */
+//   grid-area: 8 / 1 / 10 / 6;
+
+//   @media (max-width: 550px) {
+//     /* Tablets */
+//     display: none;
+//   }
+//   @media (max-width: 1100px) {
+//     /* Laptop */
+//     grid-area: 12 / 6 / 13 / 11;
+//   }
+//   @media (max-width: 1500px) {
+//     /* Desktop */
+//   }
+// `
 
 function MainContainer() {
   // Open and close Modal
   return (
     <>
       <MainWrapper>
-        <GridArea1>
+        {/* <GridArea1>
           <Socials />
         </GridArea1>
         <GridArea2>
@@ -217,7 +254,7 @@ function MainContainer() {
         </GridArea8>
         <GridArea9>
           <Contact />
-        </GridArea9>
+        </GridArea9> */}
       </MainWrapper>
     </>
   )

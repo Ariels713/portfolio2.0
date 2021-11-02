@@ -15,6 +15,16 @@ const ContactWrapper = styled.div`
   justify-content: center;
   align-content: center;
   font-family: Silka;
+
+  @media (max-width: 550px) {
+    /* Tablets */
+  }
+  @media (max-width: 1100px) {
+    /* Laptop */
+    width: auto;
+    height: auto;
+    margin-top: 0;
+  }
 `
 
 const ContactAnchor = styled.a`

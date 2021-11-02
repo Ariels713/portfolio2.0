@@ -12,6 +12,15 @@ const ProjectStackWrapper = styled.div`
   position: relative;
   /* overflow:hidden; */
   isolation: isolate;
+
+  @media (max-width: 550px) {
+    /* Tablets */
+  }
+  @media (max-width: 1100px) {
+    /* Laptop */
+    margin-top: 2rem;
+    left: 25%;
+  }
 `
 
 const ProjectCard1 = styled.div`
