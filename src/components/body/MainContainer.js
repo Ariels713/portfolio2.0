@@ -19,7 +19,7 @@ const MainWrapper = styled.div`
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   justify-items: center;
-  max-width: min(93%, 1350px);
+  max-width: 1300px;
   margin: 1rem auto;
   padding-top: 1rem;
   justify-items: center;
@@ -42,7 +42,7 @@ const GridArea1 = styled.div`
   /* grid-area: 1 / 2 / 4 / 6; */
   grid-area: 1 / 1 / 4 / 2;
   margin-bottom: 1rem;
-
+  justify-self: start;
   @media (max-width: 550px) {
     /* Tablets */
   }
@@ -54,7 +54,7 @@ const GridArea1 = styled.div`
 const GridArea2 = styled.div`
   /* grid-area: 1 / 1 / 4 / 2; */
   grid-area: 1 / 2 / 4 / 6;
-  justify-self: flex-start;
+  justify-self: center;
 
   /* cursor: pointer; */
 
@@ -70,6 +70,7 @@ const GridArea3 = styled.div`
   /* grid-area: 1 / 6 / 7 / 9; */
   grid-area: 1 / 6 / 4 / 10;
   cursor: pointer;
+  justify-self: center;
 
   @media (max-width: 550px) {
     /* Tablets */
@@ -85,9 +86,8 @@ const GridArea3 = styled.div`
 const GridArea4 = styled.div`
   /* grid-area: 1 / 9 / 3 / 13; */
   grid-area: 1 / 10 / 7 / 13;
-  /* cursor: pointer; */
-
-  @media (max-width: 550px) {
+  cursor: pointer;
+  justify-self:end;
     /* Tablets */
   }
   @media (max-width: 1100px) {

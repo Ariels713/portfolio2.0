@@ -7,7 +7,7 @@ const IntroVideo = () => {
 
   return (
     <>
-      <VideoPlayer src={videoSrc} width="420" height="280" />
+      <VideoPlayer src={videoSrc} width="400" height="280" />
     </>
   )
 }
