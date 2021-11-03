@@ -10,14 +10,13 @@ import RecentProjects from "../projects/RecentProjects"
 import Contact from "../contact/Contact"
 import propsVideo from "../videos/reactProps.mp4"
 import LampVideo from "../videos/LampVideo"
+import MobileProjectStack from "../projects/MobileProjectStack"
 // Main Wrapper, Layout for all grid siZes
 const MainWrapper = styled.div`
   --gap: 1rem;
   --min: 20ch;
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-rows: repeat(8, 1fr); */
-  /* grid-column-gap: px; */
   grid-row-gap: 1.5rem;
   padding: clamp(0.75rem, 3%, 2rem);
   place-items: center;
@@ -239,6 +238,9 @@ const GridArea5 = styled.div`
 //     /* Desktop */
 //   }
 // `
+const GridArea6 = styled.div`
+  grid-area: 6 / 1 / 7 / 2;
+`
 // const GridArea6 = styled.div`
 //   /* Blog Component */
 //   grid-area: 4 / 6 / 7 / 10;
@@ -260,6 +262,9 @@ const GridArea5 = styled.div`
 //     /* Desktop */
 //   }
 // `
+const GridArea7 = styled.div`
+  grid-area: 7 / 1 / 8 / 2;
+`
 // const GridArea7 = styled.div`
 //   /* Recent Projects Pointer Component */
 //   grid-area: 8 / 6 / 9 / 9;
@@ -278,6 +283,14 @@ const GridArea5 = styled.div`
 //     /* Desktop */
 //   }
 // `
+
+const GridArea8 = styled.div`
+  grid-area: 8 / 1 / 9 / 2;
+`
+
+const GridArea8Mobile = styled.div`
+  grid-area: 8 / 1 / 9 / 2;
+`
 // const GridArea8 = styled.div`
 //   /* Component Stack */
 //   grid-area: 7 / 6 / 10 / 12;
@@ -297,6 +310,10 @@ const GridArea5 = styled.div`
 //     /* Desktop */
 //   }
 // `
+
+const GridArea9 = styled.div`
+  grid-area: 9 / 1 / 10 / 2;
+`
 // const GridArea9 = styled.div`
 //   /* Contatct Component */
 //   grid-area: 8 / 1 / 10 / 6;
@@ -337,7 +354,21 @@ function MainContainer() {
         <GridArea5>
           <Lamp />
         </GridArea5>
-
+        <GridArea6>
+          <BlogPost />
+        </GridArea6>
+        <GridArea7>
+          <RecentProjects />
+        </GridArea7>
+        <GridArea8Mobile>
+          <MobileProjectStack />
+        </GridArea8Mobile>
+        <GridArea9>
+          <Contact />
+        </GridArea9>
+        {/* <GridArea8>
+          <ProjectStack />
+        </GridArea8> */}
         {/* <GridArea1>
           <Socials />
         </GridArea1>

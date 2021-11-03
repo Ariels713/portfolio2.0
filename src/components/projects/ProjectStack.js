@@ -10,43 +10,41 @@ import project3 from "./project3.png"
 
 const ProjectStackWrapper = styled.div`
   position: relative;
-  /* overflow:hidden; */
-  isolation: isolate;
 
-  @media (max-width: 550px) {
-    /* Tablets */
-  }
-  @media (max-width: 1100px) {
-    /* Laptop */
+  isolation: isolate;
+  width: 100%;
+  /* @media (max-width: 1100px) {
+
     margin-top: 2rem;
     left: 25%;
-  }
+  } */
 `
 
 const ProjectCard1 = styled.div`
-  position: ${(props) => props.position};
-  width: ${(props) => `${props.width}px`};
+  /* position: ${(props) => props.position}; */
+  /* width: ${(props) => `${props.width}px`};
   box-shadow: 8.5px 11.3px 9.5px rgba(0, 0, 0, 0.03),
     68px 90px 76px rgba(0, 0, 0, 0.06);
   transform: ${(props) => `rotate(${props.rotate})`};
   left: -20px;
   overflow: hidden;
   border-radius: 8px;
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 2 / 1 / 3 / 2; */
 `
+
 const ProjectCard2 = styled.div`
-  position: ${(props) => props.position};
-  width: ${(props) => `${props.width}px`};
+  /* position: ${(props) => props.position}; */
+  /* width: ${(props) => `${props.width}px`};
   overflow: hidden;
   border-radius: 8px;
   z-index: 1;
   box-shadow: 8.5px 11.3px 9.5px rgba(0, 0, 0, 0.03),
     68px 90px 76px rgba(0, 0, 0, 0.06);
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1 / 1 / 2 / 2; */
 `
 const ProjectCard3 = styled.div`
-  position: ${(props) => props.position};
-  left: 56px;
+  /* position: ${(props) => props.position}; */
+  /* left: 56px;
   width: ${(props) => `${props.width}px`};
   transform: ${(props) => `rotate(${props.rotate})`};
   border-radius: 8px;
@@ -54,7 +52,7 @@ const ProjectCard3 = styled.div`
   box-shadow: 8.5px 11.3px 9.5px rgba(0, 0, 0, 0.03),
     68px 90px 76px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 1 / 2 / 2 / 3; */
 `
 
 const ProjectImage = styled.img``
