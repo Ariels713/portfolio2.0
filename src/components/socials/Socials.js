@@ -19,6 +19,7 @@ const SocialsWrapper = styled.div`
     2px 4px 4px hsla(359, 11%, 92%, 0.2), 4px 8px 8px hsla(359, 11%, 92%, 0.2),
     8px 16px 16px hsla(359, 11%, 92%, 0.2),
     16px 32px 32px hsla(359, 11%, 92%, 0.2);
+
   /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
@@ -31,7 +32,6 @@ const SocialsWrapper = styled.div`
   justify-items: center;
 
    */
-
   @media (min-width: 550px) {
     /* Tablets */
   }
@@ -43,7 +43,13 @@ const SocialsWrapper = styled.div`
   }
 `
 
-const SocialIconLinks = styled.a``
+const SocialIconLinks = styled.a`
+  margin: 0 0.5rem;
+  &:hover {
+    transition: transform 200ms;
+    transform: rotate(-15deg) scale(1.2);
+  }
+`
 
 function Socials() {
   return (
